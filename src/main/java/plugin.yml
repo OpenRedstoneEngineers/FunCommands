@@ -1,0 +1,63 @@
+name: FunCommands
+main: chibill.FunCommands.Main
+version: 1.3.2
+author: Chibill
+commands:
+  derps:
+    description: List all the possible derps.
+    usage: /<command>
+    permission: FunCommands.derp
+    permission-message: You don't have permission!
+
+  derp:
+    description: Prints out a random derp.
+    usage: /<command> 
+    permission: FunCommands.derp
+    permission-message: You don't have permission!
+ 
+  funs:
+    description: Prints out a list of Fun Commands.
+    usage: /<command> 
+    permission: FunCommands.fun
+    permission-message: You don't have permission!
+
+  add:
+    description: Add a fun command!
+    usage: /<command> <new command>
+    permission: FunCommands.fun.add
+    permission-message: You don't have permission!
+  remove:
+    description: Remove a fun command!
+    usage: /<command> <old command>
+    permission: FunCommands.fun.remove
+    permission-message: You don't have permission!
+  aprove:
+    description: Aprove unaproved fun command!
+    usage: /<command>
+    permission: FunCommands.fun.aprvoe
+    permission-message: You don't have permission!
+  aproveall:
+    description: Aprove all unaproved fun commands!
+    usage: /<command> 
+    permission: FunCommands.fun.aprvoe
+    permission-message: You don't have permission!
+  deny:
+    description: Deny unaproved fun command!
+    usage: /<command>
+    permission: FunCommands.fun.deny
+    permission-message: You don't have permission!
+  denyall:
+    description: Deny all unaproved fun commands!
+    usage: /<command> 
+    permission: FunCommands.fun.deny
+    permission-message: You don't have permission!
+  foodfight:
+    description: A polite mealtime activity
+    usage: /<command> victim
+    permission: FunCommands.fun
+    permission-message: You don't have permission!  
+  slap:
+    description: Slappings!
+    usage: /slap <Player> <Object>
+    permission: FunCommands.fun
+    permission-message: You don't have permission!  
