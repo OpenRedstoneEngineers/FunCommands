@@ -85,13 +85,13 @@ public class Main extends JavaPlugin implements Listener {
     			try{
     				victim = Bukkit.getPlayer(args[0]);
     			}catch(Exception e){
-        			sender.sendMessage("§c[ERROR] No such player.");
+        			sender.sendMessage("Â§c[ERROR] No such player.");
         			return true;
     			}
     			
     			int temp =(int)(Math.random()*Foods.length);
     			
-    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a/an §6 " + Foods[temp].name() +"§c at §5" + victim.getName());
+    			Bukkit.broadcastMessage("Â§5" + sender.getName() +"Â§e threw a" + Foods[temp].name().matches("^[aeiou].*") ? "n" : "" + " Â§6 " + Foods[temp].name() +"Â§c at Â§5" + victim.getName());
     			
     			victim.getInventory().addItem(new ItemStack(Foods[temp]));
     			
@@ -101,12 +101,12 @@ public class Main extends JavaPlugin implements Listener {
     				
     				victim.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 40, 1,true));    				
     				victim.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 40, 1,true));
-    				Bukkit.broadcastMessage("§5 Headshot!");
+    				Bukkit.broadcastMessage("Â§5 Headshot!");
     			}
     			
     		}else{
     			
-    			sender.sendMessage("§c[ERROR] You must specify who you are to throw food at.");
+    			sender.sendMessage("Â§c[ERROR] You must specify who you are to throw food at.");
     		}
     		return true;}
     	if(cmd.getName().equalsIgnoreCase("remove")){
@@ -116,7 +116,7 @@ public class Main extends JavaPlugin implements Listener {
     		FunCommands.registerCommands();
     		return true;
     		}else{
-    			sender.sendMessage("§c[ERROR] You must specify the command to remove!");
+    			sender.sendMessage("Â§c[ERROR] You must specify the command to remove!");
     			return true;
     		}
     	}
@@ -129,7 +129,7 @@ public class Main extends JavaPlugin implements Listener {
     			if(cmd.getName().equalsIgnoreCase("deny-all")){
     				 FunCommands.denyAll(args[0],this.getDataFolder()+File.separator+"UnAproved.json");
     			}else{
-    			sender.sendMessage("§cYou must give a command to deny!");
+    			sender.sendMessage("Â§cYou must give a command to deny!");
     		}}
     		return true;}
     	if(cmd.getName().equalsIgnoreCase("aprove")|cmd.getName().equalsIgnoreCase("aprove-all")){
@@ -142,7 +142,7 @@ public class Main extends JavaPlugin implements Listener {
     		}else{if(cmd.getName().equalsIgnoreCase("aprove-all")){
     			 FunCommands.ApproveALL(sender,this.getDataFolder()+File.separator+"UnAproved.json", this.getDataFolder()+File.separator+"Commands.json");
     		}else{
-    			sender.sendMessage("§cYou must give a command to aprove!");
+    			sender.sendMessage("Â§cYou must give a command to aprove!");
     		}
     		
     		}
@@ -160,7 +160,7 @@ public class Main extends JavaPlugin implements Listener {
     			return FunCommands.AddCommand(temp, sender,this.getDataFolder()+File.separator+"UnAproved.json");
     			
     		}else{
-    			sender.sendMessage("§c[ERROR] You must specify the command to add in JSON. See the forum post for more info!");
+    			sender.sendMessage("Â§c[ERROR] You must specify the command to add in JSON. See the forum post for more info!");
     			return true;
     		}
     	}
@@ -170,7 +170,7 @@ public class Main extends JavaPlugin implements Listener {
     			try{
     				victim = Bukkit.getPlayer(args[0]);
     			}catch(Exception e){
-        			sender.sendMessage("§c[ERROR] No such player.");
+        			sender.sendMessage("Â§c[ERROR] No such player.");
         			return true;
     			}
                 String slap = "large trout";
@@ -178,7 +178,7 @@ public class Main extends JavaPlugin implements Listener {
                 try{
                 	 victimName = victim.getName();
     			}catch(Exception e){
-        			sender.sendMessage("§c[ERROR] No such player.");
+        			sender.sendMessage("Â§c[ERROR] No such player.");
         			return true;
     			}
                 
@@ -193,10 +193,10 @@ public class Main extends JavaPlugin implements Listener {
     			}catch(Exception e){
     			}
                 
-                Bukkit.broadcastMessage("§5" + sender.getName() + "§c slapped §5" + victimName + "§c about a bit with a/an §6" +slap);
+                Bukkit.broadcastMessage("Â§5" + sender.getName() + "Â§c slapped Â§5" + victimName + "Â§c about a bit with a" + slap.matches("^[aeiou].*") ? "n" : "" +  "Â§6" +slap);
                 
     		}else{
-    			sender.sendMessage("§c[ERROR] You must specify who you are slapping");
+    			sender.sendMessage("Â§c[ERROR] You must specify who you are slapping");
 
     		}
     		return true;}
