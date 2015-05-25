@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -92,9 +93,9 @@ public class Main extends JavaPlugin implements Listener {
     			int temp =(int)(Math.random()*Foods.length);
     			
     			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a/an §6 " + Foods[temp].name() +"§c at §5" + victim.getName());
-    			
+    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
     			victim.getInventory().addItem(new ItemStack(Foods[temp]));
-    			
+    		}
     			temp =(int)(Math.random()*5);
     			
     			if(temp == 0){
