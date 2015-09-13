@@ -18,10 +18,11 @@ public class Register {
 		plugin = plug;
 	}
 	
-	public void registerCommand(String... aliases) {
-		PluginCommand command = getCommand(aliases[0], plugin);
+	public void registerCommand(String commands,String Description,String permission) {
+		PluginCommand command = getCommand(commands, plugin);
 		command.setExecutor(plugin);
-		command.setAliases(Arrays.asList(aliases));
+		command.setPermission(permission);
+		command.setDescription(Description);
 		getCommandMap().register(plugin.getDescription().getName(), command);
 	}
 	public void UnregisterCommand(String Name) {
@@ -61,9 +62,8 @@ public class Register {
 			if (Bukkit.getPluginManager() instanceof SimplePluginManager) {
 				Field f = SimplePluginManager.class.getDeclaredField("commandMap");
 				f.setAccessible(true);
-	 
-				commandMap = (CommandMap) f.get(Bukkit.getPluginManager());
-			}
+				
+				commandMap = (CommandMap) f.get(Bukkit.getPluginManager())	;}
 		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
