@@ -1,8 +1,13 @@
 name: FunCommands
 main: chibill.FunCommands.Main
-version: 2.0.0
+version: 2.0.1
 author: Chibill
 commands:
+  version:
+  	description: Gets the version of FunCommands
+    usage: /<command>
+    permission: FunCommands.version
+    permission-message: You don't have permission!
   derps:
     description: List all the possible derps.
     usage: /<command>

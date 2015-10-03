@@ -8,16 +8,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import chibill.FunCommands.Command;
-
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import chibill.FunCommands.utils.Register;
+import chibill.FunCommands.Command;
 
 public class DynamicCommands {
 
@@ -102,32 +100,31 @@ public class DynamicCommands {
 				
 				if(function.contains("<arg-8>") & args.length<9){
 					sender.sendMessage("This Command reqires 9 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-7") & args.length<8){
 					sender.sendMessage("This Command reqires 8 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-6>") & args.length<7){
 					sender.sendMessage("This Command reqires 7 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-5>") & args.length<6){
 					sender.sendMessage("This Command reqires 6 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-4>") & args.length<5){
 					sender.sendMessage("This Command reqires 5 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-3>") & args.length<4){
 					sender.sendMessage("This Command reqires 4 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-2>") & args.length<3){
 					sender.sendMessage("This Command reqires 3 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-1>") & args.length<2){
 					sender.sendMessage("This Command reqires 2 args. "+ x.getDescription());
-				}
+				}else{
 				if(function.contains("<arg-0>") & args.length<1){
 					sender.sendMessage("This Command reqires 1 arg. "+ x.getDescription());
-				}
-				
+				}}}}}}}}}
 				function = function.replace("<colour-0>","§0").replace("<colour-1>","§1").replace("<colour-2>", "§2").replace("<colour-3>","§3").replace("<colour-4>","§4").replace("<colour-5>","§5").replace("<colour-6>","§6").replace("<colour-7>","§7").replace("<colour-8>","§8").replace("<colour-9>","§9").replace("<colour-a>","§a").replace("<colour-b>","§b").replace("<colour-c>","§c").replace("<colour-d>","§d").replace("<colour-e>","§e").replace("<colour-f>","§f").replace("<colour-k>","§k").replace("<colour-m>","§m").replace("<colour-n>","§n").replace("<colour-o>","§o").replace("<colour-r>","§r").replace("<colour-l>","§l");
 				
 				function = function.replace("<name>", sender.getName());

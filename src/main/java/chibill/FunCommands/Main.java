@@ -50,18 +50,24 @@ public class Main extends JavaPlugin {
 	    
 	    	switch(cmd.getName().toLowerCase()){
 	    	
+	    	case "version":
+	    		if(sender.hasPermission("FunCommands.version")){
+	    			sender.sendMessage("FunCommands version: "+this.getDescription().getVersion());
+	    		}
+	    	
 	    	case "derp":
 	    		if(sender.hasPermission("FunCommmands.derp")){
 	    		Derps.GetRandomDerp(sender, args);
 	    		}
 	    		return true;
 	    	case "derps":
-	    		if(sender.hasPermission("FunCommmands.derp")){
+	    		if(sender.hasPermission("FunCommands.derp")){
 	    		Derps.GetDerpList(sender);
 	    		}
 	    		return true;
 	    		
 	    	case "slap":
+	    		if(sender.hasPermission("FunCommands.slap")){
 	        		if(args.length >0){
 	        			Player victim;
 	        			try{
@@ -97,8 +103,9 @@ public class Main extends JavaPlugin {
 
 	        		}
 	        		return true;
-
+	    		}
 	    	case "foodfight":
+	    		if(sender.hasPermission("FunCommands.foodfight")){
 	    		if(args.length >0){
 	    			Player victim;
 	    			try{
@@ -110,7 +117,7 @@ public class Main extends JavaPlugin {
 	    			
 	    			int temp =(int)(Math.random()*Foods.length);
 	    			
-	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n" : "") + " §6 " + Foods[temp].name() +"§c at §5" + victim.getName());
+	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + " §6 " + Foods[temp].name() +"§c at §5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
 	    			victim.getInventory().addItem(new ItemStack(Foods[temp]));
 	    		}
@@ -128,6 +135,7 @@ public class Main extends JavaPlugin {
 	    			sender.sendMessage("§c[ERROR] You must specify who you are to throw food at.");
 	    		}
 	    		return true;
+	    		}
 	    	default:
 	    		if(DynamicCommands.CommandNames.contains(cmd.getName().toLowerCase())){
 	    			return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);
