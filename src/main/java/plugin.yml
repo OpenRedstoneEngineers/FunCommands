@@ -1,9 +1,9 @@
 name: FunCommands
 main: chibill.FunCommands.Main
-version: 2.0.1
+version: 2.0.2
 author: Chibill
 commands:
-  version:
+  funversion:
   	description: Gets the version of FunCommands
     usage: /<command>
     permission: FunCommands.version

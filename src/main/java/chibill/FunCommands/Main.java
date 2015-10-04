@@ -50,7 +50,7 @@ public class Main extends JavaPlugin {
 	    
 	    	switch(cmd.getName().toLowerCase()){
 	    	
-	    	case "version":
+	    	case "funversion":
 	    		if(sender.hasPermission("FunCommands.version")){
 	    			sender.sendMessage("FunCommands version: "+this.getDescription().getVersion());
 	    		}
