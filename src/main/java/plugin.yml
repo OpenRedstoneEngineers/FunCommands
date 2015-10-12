@@ -22,10 +22,10 @@ commands:
   foodfight:
     description: A polite mealtime activity
     usage: /<command> victim
-    permission: FunCommands.fun
+    permission: FunCommands.foodfight
     permission-message: You don't have permission!  
   slap:
     description: Slappings!
     usage: /slap <Player> <Object>
-    permission: FunCommands.fun
+    permission: FunCommands.slap
     permission-message: You don't have permission!  
