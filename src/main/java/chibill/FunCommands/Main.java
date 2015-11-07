@@ -111,10 +111,10 @@ public class Main extends JavaPlugin {
 	    			}
 	    			
 	    			int temp = (int)(Math.random()*Foods.length);
-	    			
-	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + "§6" + Foods[temp].toItemStack().getItemMeta().getDisplayName().toLowerCase() +"§c at §5" + victim.getName());
+	    			ItemStack item = new ItemStack(Foods[temp]);
+	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + "§6" + item.getItemMeta().getDisplayName() +"§c at §5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
-	    			victim.getInventory().addItem(new ItemStack(Foods[temp]));
+	    			victim.getInventory().addItem(item);
 	    		}
 	    			temp =(int)(Math.random()*5);
 	    			
