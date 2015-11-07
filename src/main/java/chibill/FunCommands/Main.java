@@ -91,7 +91,7 @@ public class Main extends JavaPlugin {
 	        			}catch(Exception e){
 	        			}
 	                    
-	                    Bukkit.broadcastMessage("§5" + sender.getName() + "§c slapped §5" + victimName + "§c about a bit with a" + (slap.matches("^[aeiou].*") ? "n" : "") +  "§6" +slap);
+	                    Bukkit.broadcastMessage("§5" + sender.getName() + "§c slapped §5" + victimName + "§c about a bit with a" + (slap.matches("^[aeiou].*") ? "n " : " ") +  "§6" +slap);
 	                    
 	        		}else{
 	        			sender.sendMessage("§c[ERROR] You must specify who you are slapping");
@@ -110,9 +110,9 @@ public class Main extends JavaPlugin {
 	        			return true;
 	    			}
 	    			
-	    			int temp =(int)(Math.random()*Foods.length);
+	    			int temp = (int)(Math.random()*Foods.length);
 	    			
-	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + " §6 " + Foods[temp].name() +"§c at §5" + victim.getName());
+	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + "§6" + Foods[temp]toItemStack().getItemMeta().getDisplayName().toLowerCase() +"§c at §5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
 	    			victim.getInventory().addItem(new ItemStack(Foods[temp]));
 	    		}
