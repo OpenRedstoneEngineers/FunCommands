@@ -4,7 +4,7 @@ version: 2.0.2
 author: Chibill
 commands:
   funversion:
-  	description: Gets the version of FunCommands
+    description: Gets the version of FunCommands
     usage: /<command>
     permission: FunCommands.version
     permission-message: You don't have permission!

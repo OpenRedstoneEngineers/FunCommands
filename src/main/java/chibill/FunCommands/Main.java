@@ -52,7 +52,7 @@ public class Main extends JavaPlugin {
 	    	
 	    	case "funversion":
 	    			sender.sendMessage("FunCommands version: "+this.getDescription().getVersion());
-	    		
+	    		return true
 	    	
 	    	case "derp":
 	    		Derps.GetRandomDerp(sender, args);
