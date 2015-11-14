@@ -160,8 +160,8 @@ public class DynamicCommands {
 				Bukkit.dispatchCommand(sender, runable);
 				}
 				
-				if(function.startsWith("<self>")){
-					function.replace("<self>", "");
+				if(output.startsWith("<self>")){
+					output = output.replace("<self>", "");
 					sender.sendMessage(output);
 				}else{
 					Bukkit.broadcastMessage(output);

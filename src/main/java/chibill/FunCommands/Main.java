@@ -11,6 +11,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -18,7 +19,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Main extends JavaPlugin {
 
-		private Material[] Foods = {Material.APPLE,Material.MUSHROOM_SOUP,Material.BREAD,Material.PORK,Material.COOKED_FISH,Material.CAKE,Material.COOKIE,Material.MELON,Material.COOKED_BEEF,Material.COOKED_CHICKEN,Material.CARROT,Material.POTATO,Material.PUMPKIN_PIE,Material.RABBIT_STEW,Material.COOKED_RABBIT,Material.COOKED_MUTTON,Material.MILK_BUCKET};
+		private Object[][] Foods = {{Material.APPLE.getId(),"apple"},{Material.MUSHROOM_SOUP.getId(),"mushroom stew"},{Material.BREAD.getId(),"bread"},{Material.PORK.getId(),"pork"},{Material.COOKED_FISH.getId(),"cooked fish"},{Material.CAKE.getId(),"cake"},{Material.COOKIE.getId(),"cookie"},{Material.MELON.getId(),"melon"},{Material.COOKED_BEEF.getId(),"beef"},{Material.COOKED_CHICKEN.getId(),"cooked chicken"},{Material.CARROT.getId(),"carrot"},{Material.POTATO.getId(),"potato"},{Material.PUMPKIN_PIE.getId(),"pumpkin pie"},{Material.RABBIT_STEW.getId(),"rabbit stew"},{Material.COOKED_RABBIT.getId(),"cooked rabbit"},{Material.COOKED_MUTTON.getId(),"cooked mutton"},{Material.MILK_BUCKET.getId(),"milk bucket"}};
 	
 		public static Logger logger;
 	
@@ -111,8 +112,9 @@ public class Main extends JavaPlugin {
 	    			}
 	    			
 	    			int temp = (int)(Math.random()*Foods.length);
-	    			ItemStack item = new ItemStack(Foods[temp]);
-	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (Foods[temp].name().matches("^[aeiou].*") ? "n " : " ") + "§6" + item.getItemMeta().getDisplayName() +"§c at §5" + victim.getName());
+	    			@SuppressWarnings("deprecation")
+					ItemStack item = new ItemStack((int) Foods[temp][0]);
+	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (((String) Foods[temp][1]).matches("^[aeiou].*") ? "n " : " ") + "§6" + ((String) Foods[temp][1]) +"§c at §5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
 	    			victim.getInventory().addItem(item);
 	    		}
