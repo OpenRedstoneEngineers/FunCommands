@@ -93,7 +93,7 @@ public class Main extends JavaPlugin {
 	        			}catch(Exception e){
 	        			}
 	                    
-	                    Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() + ChatColor.COLOR_CHAR+"c slapped §5" + victimName + ChatColor.COLOR_CHAR+"c about a bit with a" + (slap.matches("^[aeiou].*") ? "n " : " ") +  ChatColor.COLOR_CHAR+"6" +slap);
+	                    Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() + ChatColor.COLOR_CHAR+"c slapped "+ChatColor.COLOR_CHAR+"5" + victimName + ChatColor.COLOR_CHAR+"c about a bit with a" + (slap.matches("^[aeiou].*") ? "n " : " ") +  ChatColor.COLOR_CHAR+"6" +slap);
 	                    
 	        		}else{
 	        			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] You must specify who you are slapping");
@@ -115,7 +115,7 @@ public class Main extends JavaPlugin {
 	    			int temp = (int)(Math.random()*Foods.length);
 	    			@SuppressWarnings("deprecation")
 					ItemStack item = new ItemStack((int) Foods[temp][0]);
-	    			Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() +ChatColor.COLOR_CHAR+"e threw a" + (((String) Foods[temp][1]).matches("^[aeiou].*") ? "n " : " ") + ChatColor.COLOR_CHAR+"6" + ((String) Foods[temp][1]) +ChatColor.COLOR_CHAR+"c at §5" + victim.getName());
+	    			Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() +ChatColor.COLOR_CHAR+"e threw a" + (((String) Foods[temp][1]).matches("^[aeiou].*") ? "n " : " ") + ChatColor.COLOR_CHAR+"6" + ((String) Foods[temp][1]) +ChatColor.COLOR_CHAR+"c at "+ChatColor.COLOR_CHAR+"5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
 	    			victim.getInventory().addItem(item);
 	    		}
