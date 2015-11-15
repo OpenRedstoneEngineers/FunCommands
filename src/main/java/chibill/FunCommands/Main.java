@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -69,7 +70,7 @@ public class Main extends JavaPlugin {
 	        			try{
 	        				victim = Bukkit.getPlayer(args[0]);
 	        			}catch(Exception e){
-	            			sender.sendMessage("§c[ERROR] No such player.");
+	            			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] No such player.");
 	            			return true;
 	        			}
 	                    String slap = "large trout";
@@ -77,7 +78,7 @@ public class Main extends JavaPlugin {
 	                    try{
 	                    	 victimName = victim.getName();
 	        			}catch(Exception e){
-	            			sender.sendMessage("§c[ERROR] No such player.");
+	            			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] No such player.");
 	            			return true;
 	        			}
 	                    
@@ -92,10 +93,10 @@ public class Main extends JavaPlugin {
 	        			}catch(Exception e){
 	        			}
 	                    
-	                    Bukkit.broadcastMessage("§5" + sender.getName() + "§c slapped §5" + victimName + "§c about a bit with a" + (slap.matches("^[aeiou].*") ? "n " : " ") +  "§6" +slap);
+	                    Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() + ChatColor.COLOR_CHAR+"c slapped §5" + victimName + ChatColor.COLOR_CHAR+"c about a bit with a" + (slap.matches("^[aeiou].*") ? "n " : " ") +  ChatColor.COLOR_CHAR+"6" +slap);
 	                    
 	        		}else{
-	        			sender.sendMessage("§c[ERROR] You must specify who you are slapping");
+	        			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] You must specify who you are slapping");
 
 	        		}
 	        		return true;
@@ -107,14 +108,14 @@ public class Main extends JavaPlugin {
 	    			try{
 	    				victim = Bukkit.getPlayer(args[0]);
 	    			}catch(Exception e){
-	        			sender.sendMessage("§c[ERROR] No such player.");
+	        			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] No such player.");
 	        			return true;
 	    			}
 	    			
 	    			int temp = (int)(Math.random()*Foods.length);
 	    			@SuppressWarnings("deprecation")
 					ItemStack item = new ItemStack((int) Foods[temp][0]);
-	    			Bukkit.broadcastMessage("§5" + sender.getName() +"§e threw a" + (((String) Foods[temp][1]).matches("^[aeiou].*") ? "n " : " ") + "§6" + ((String) Foods[temp][1]) +"§c at §5" + victim.getName());
+	    			Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5" + sender.getName() +ChatColor.COLOR_CHAR+"e threw a" + (((String) Foods[temp][1]).matches("^[aeiou].*") ? "n " : " ") + ChatColor.COLOR_CHAR+"6" + ((String) Foods[temp][1]) +ChatColor.COLOR_CHAR+"c at §5" + victim.getName());
 	    		if(victim.getGameMode() != GameMode.SURVIVAL & victim.getGameMode() !=  GameMode.ADVENTURE ){
 	    			victim.getInventory().addItem(item);
 	    		}
@@ -124,12 +125,12 @@ public class Main extends JavaPlugin {
 	    				
 	    				victim.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 40, 1,true));    				
 	    				victim.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 40, 1,true));
-	    				Bukkit.broadcastMessage("§5 Headshot!");
+	    				Bukkit.broadcastMessage(ChatColor.COLOR_CHAR+"5 Headshot!");
 	    			}
 	    			
 	    		}else{
 	    			
-	    			sender.sendMessage("§c[ERROR] You must specify who you are to throw food at.");
+	    			sender.sendMessage(ChatColor.COLOR_CHAR+"c[ERROR] You must specify who you are to throw food at.");
 	    		}
 	    		return true;
 	    		

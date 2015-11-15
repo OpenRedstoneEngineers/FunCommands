@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -125,7 +126,7 @@ public class DynamicCommands {
 				if(function.contains("<arg-0>") & args.length<1){
 					sender.sendMessage("This Command reqires 1 arg. "+ x.getDescription());
 				}}}}}}}}}
-				function = function.replace("<colour-0>","§0").replace("<colour-1>","§1").replace("<colour-2>", "§2").replace("<colour-3>","§3").replace("<colour-4>","§4").replace("<colour-5>","§5").replace("<colour-6>","§6").replace("<colour-7>","§7").replace("<colour-8>","§8").replace("<colour-9>","§9").replace("<colour-a>","§a").replace("<colour-b>","§b").replace("<colour-c>","§c").replace("<colour-d>","§d").replace("<colour-e>","§e").replace("<colour-f>","§f").replace("<colour-k>","§k").replace("<colour-m>","§m").replace("<colour-n>","§n").replace("<colour-o>","§o").replace("<colour-r>","§r").replace("<colour-l>","§l");
+				function = function.replace("<colour-0>",ChatColor.COLOR_CHAR+"0").replace("<colour-1>",ChatColor.COLOR_CHAR+"1").replace("<colour-2>", ChatColor.COLOR_CHAR+"2").replace("<colour-3>",ChatColor.COLOR_CHAR+"3").replace("<colour-4>",ChatColor.COLOR_CHAR+"4").replace("<colour-5>",ChatColor.COLOR_CHAR+"5").replace("<colour-6>",ChatColor.COLOR_CHAR+"6").replace("<colour-7>",ChatColor.COLOR_CHAR+"7").replace("<colour-8>",ChatColor.COLOR_CHAR+"8").replace("<colour-9>",ChatColor.COLOR_CHAR+"9").replace("<colour-a>",ChatColor.COLOR_CHAR+"a").replace("<colour-b>",ChatColor.COLOR_CHAR+"b").replace("<colour-c>",ChatColor.COLOR_CHAR+"c").replace("<colour-d>",ChatColor.COLOR_CHAR+"d").replace("<colour-e>",ChatColor.COLOR_CHAR+"e").replace("<colour-f>",ChatColor.COLOR_CHAR+"f").replace("<colour-k>",ChatColor.COLOR_CHAR+"k").replace("<colour-m>",ChatColor.COLOR_CHAR+"m").replace("<colour-n>",ChatColor.COLOR_CHAR+"n").replace("<colour-o>",ChatColor.COLOR_CHAR+"o").replace("<colour-r>",ChatColor.COLOR_CHAR+"r").replace("<colour-l>",ChatColor.COLOR_CHAR+"l");
 				
 				function = function.replace("<name>", sender.getName());
 				
