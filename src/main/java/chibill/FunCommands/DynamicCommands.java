@@ -138,7 +138,7 @@ public class DynamicCommands {
 				
 				for(int r = 0;r < args.length;r = r + 1){
 					
-					function.replace("<arg-"+r+">",args[r]);
+					function = function.replace("<arg-"+r+">",args[r]);
 					
 				}
 				
