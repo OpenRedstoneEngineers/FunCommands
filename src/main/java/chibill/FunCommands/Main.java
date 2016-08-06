@@ -134,9 +134,9 @@ public class Main extends JavaPlugin {
 	    		}
 	    		return true;
 	    		
-	    	default:
+	    	default: 
 	    		if(DynamicCommands.CommandNames.contains(cmd.getName().toLowerCase())){
-	    			return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);
+	    			if(sender.hasPermission("funcommand."+cms.get Name()){return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);}
 	    		}else{
 	    			return false;
 	    		}
