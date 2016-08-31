@@ -137,7 +137,7 @@ public class Main extends JavaPlugin {
 	    	default: 
 	    		if(DynamicCommands.CommandNames.contains(cmd.getName().toLowerCase())){
 	    			if(cmd.getName()=="leave"||cmd.getName()=="join"||cmd.getName()=="join-rename"){
-	    				if(sender.hasPermission("funcommand.staff")){
+	    				if(sender.hasPermission("funcommands.staff")){
 	    				}else{return false;}
 	    			}
 	    			return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);
