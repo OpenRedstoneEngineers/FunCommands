@@ -64,10 +64,10 @@ public class Register {
 		CommandMap commandMap = getCommandMap();
 	 	Field f = SimpleCommandMap.class.getDeclaredField("knownCommands");
 		f.setAccessible(true);
-		f.setInt(f, f.getModifiers() & ~Modifier.FINAL);
+		
 		Map<String, Command> knownCommands = (Map<String, Command>)f.get(commandMap);
 		knownCommands.remove(name);
-		f.setInt(f, f.getModifiers() & ~Modifier.FINAL);
+		
 		f.setAccessible(false);
 	}catch(Exception e){
 		e.printStackTrace();
