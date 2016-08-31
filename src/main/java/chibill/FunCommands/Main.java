@@ -102,6 +102,7 @@ public class Main extends JavaPlugin {
 	        		return true;
 	    	case "funreload":
 	    		DynamicCommands.UnRegisterCommands();
+	    		onEnable();
 	    		return true;
 	    	case "foodfight":
 	    		
