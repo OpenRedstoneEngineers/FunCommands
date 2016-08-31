@@ -70,7 +70,7 @@ public class Register {
 		f.setInt(f, f.getModifiers() & ~Modifier.FINAL);
 		f.setAccessible(false);
 	}catch(Exception e){
-		
+		e.printStackTrace();
 	}}
 	 
 	private static CommandMap getCommandMap() {
