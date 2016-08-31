@@ -2,6 +2,7 @@ package chibill.FunCommands.utils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Moifier;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
@@ -53,6 +54,17 @@ public class Register {
 		}
 	 
 		return command;
+	}
+	
+	private static void removeComamnd(String name) {
+		CommandMap commandMap = getCommandMap();
+	 	Field f = SimpleCommandMap.class.getDeclaredField("knownCommands");
+		f.setAccessible(true);
+		f.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+		Map<String, Command> knownCommands = (Map<String, Command>)f.get(commandMap);
+		knowCommands.remove(name);
+		f.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+		f.setAccessible(false);
 	}
 	 
 	private static CommandMap getCommandMap() {
