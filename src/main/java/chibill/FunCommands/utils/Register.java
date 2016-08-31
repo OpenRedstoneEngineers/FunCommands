@@ -57,6 +57,7 @@ public class Register {
 	}
 	
 	private static void removeComamnd(String name) {
+		try{
 		CommandMap commandMap = getCommandMap();
 	 	Field f = SimpleCommandMap.class.getDeclaredField("knownCommands");
 		f.setAccessible(true);
@@ -65,7 +66,9 @@ public class Register {
 		knowCommands.remove(name);
 		f.setInt(field, field.getModifiers() & ~Modifier.FINAL);
 		f.setAccessible(false);
-	}
+	}catch(Exception e){
+		
+	}}
 	 
 	private static CommandMap getCommandMap() {
 		CommandMap commandMap = null;
