@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
@@ -65,7 +66,7 @@ public class Register {
 		f.setAccessible(true);
 		f.setInt(f, f.getModifiers() & ~Modifier.FINAL);
 		Map<String, Command> knownCommands = (Map<String, Command>)f.get(commandMap);
-		knowCommands.remove(name);
+		knownCommands.remove(name);
 		f.setInt(f, f.getModifiers() & ~Modifier.FINAL);
 		f.setAccessible(false);
 	}catch(Exception e){
