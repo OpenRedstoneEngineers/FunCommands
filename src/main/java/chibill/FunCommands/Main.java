@@ -100,7 +100,9 @@ public class Main extends JavaPlugin {
 
 	        		}
 	        		return true;
-	    		
+	    	case "funreload":
+	    		DynamicCommands.UnRegisterCommands();
+	    		return true;
 	    	case "foodfight":
 	    		
 	    		if(args.length >0){
