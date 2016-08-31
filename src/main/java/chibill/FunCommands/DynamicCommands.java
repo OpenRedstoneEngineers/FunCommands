@@ -20,16 +20,19 @@ import chibill.FunCommands.Command;
 
 public class DynamicCommands {
 
-	private static List<Command> Commands = new ArrayList<Command>();
+	private static List<Command> Commands = null;
 	
-	public static List<String> CommandNames = new ArrayList<String>();
+	public static List<String> CommandNames = null;
 	
 	private static final File CommandFile =  new File(Main.PluginFolder+File.separator+"Commands.json");
 	
 	private static Register reg = null;
 	
 	public static void ReadCommands() throws IOException{
-	
+		Commands = new ArrayList<Command>();
+		CommandNames = new ArrayList<String>();
+		
+		
 		Main.logger.info("Reading FunCommands from Commands.json!");
     	
 	   	   FileReader fileReader = null;
