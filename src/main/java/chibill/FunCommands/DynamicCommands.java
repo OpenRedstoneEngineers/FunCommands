@@ -26,6 +26,8 @@ public class DynamicCommands {
 	
 	private static final File CommandFile =  new File(Main.PluginFolder+File.separator+"Commands.json");
 	
+	private static Register reg = null;
+	
 	public static void ReadCommands() throws IOException{
 	
 		Main.logger.info("Reading FunCommands from Commands.json!");
@@ -82,7 +84,7 @@ public class DynamicCommands {
 	}
 
 	public static void RegisterCommands(){
-		Register reg = new Register();
+		reg = new Register();
 		reg.setPlugin(Main.plugin);
 		for(Command x:Commands){
 			
@@ -91,7 +93,14 @@ public class DynamicCommands {
 		}
 		
 	}
-
+	public static void UnRegisterCommands(){
+		for(Command x:Commands){
+			
+			reg.removeCommand(x.getCommand());
+			
+		}
+		
+	}
 	public static boolean runCommand(CommandSender sender, String cmd,String[] args) {
 	
 		for(Command x:Commands){
