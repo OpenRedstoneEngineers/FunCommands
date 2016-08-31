@@ -8,6 +8,11 @@ commands:
     usage: /<command>
     permission: FunCommands.version
     permission-message: You don't have permission!
+  funreload:
+    description: Reloads funcommands. Can potentally messup other commands....
+    usage: /<command>
+    permission: FunCommands.reload
+    permission-message: You don't have permission!
   derps:
     description: List all the possible derps.
     usage: /<command>
