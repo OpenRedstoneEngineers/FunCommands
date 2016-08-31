@@ -56,7 +56,7 @@ public class Register {
 		return command;
 	}
 	
-	public void removeComamnd(String name) {
+	public void removeCommand(String name) {
 		try{
 		CommandMap commandMap = getCommandMap();
 	 	Field f = SimpleCommandMap.class.getDeclaredField("knownCommands");
