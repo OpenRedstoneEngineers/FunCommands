@@ -136,14 +136,10 @@ public class Main extends JavaPlugin {
 	    		
 	    	default: 
 	    		if(DynamicCommands.CommandNames.contains(cmd.getName().toLowerCase())){
-	    			if(cmd.getName()=="leave"||cmd.getName()=="join"||cmd.getName()=="join-rename"){
-	    				if(sender.hasPermission("funcommands.staff")){
-	    				}else{return false;}
-	    			}
-	    			return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);
-	    		}else{
-	    			return false;
-	    		}
+	    		if(sender.hasPermission("funcommands."+cmd.getName())){return DynamicCommands.runCommand(sender,cmd.getName().toLowerCase(),args);}else{return false;}
+  	    		}else{
+  	    			return false;
+  	    		}
 	    	}
 	    	
 	    }
