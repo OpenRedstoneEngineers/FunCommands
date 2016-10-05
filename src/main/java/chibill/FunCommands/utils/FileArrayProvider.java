@@ -9,7 +9,7 @@ import java.util.List;
 public class FileArrayProvider {
 
     public static String[] readLines(File file) throws IOException {
-        Scanner scan = new Scanner(file)
+        Scanner scan = new Scanner(file);
         List<String> lines = new ArrayList<String>();
         String line = null;
         while (scan.hasNextLine()) {
