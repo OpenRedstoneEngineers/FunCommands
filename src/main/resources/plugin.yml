@@ -33,4 +33,9 @@ commands:
     description: Slappings!
     usage: /slap <Player> <Object>
     permission: FunCommands.slap
-    permission-message: You don't have permission!  
+    permission-message: You don't have permission!
+  rename:
+    description: Rename the item in your hand.
+    usage: /rename <name>
+    permission: FunCommands.rename
+    permission-message: You don't have permission!
