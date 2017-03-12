@@ -100,6 +100,26 @@ public class Main extends JavaPlugin {
 
 	        		}
 	        		return true;
+			case "rename":
+					if (!(sender instanceof Player)) {
+						sender.sendMessage("[ERROR] You need to be in game to use this.");
+					}
+					if (args.length < 0) {
+						sender.sendMessage(ChatColor.RED + "[ERROR] Please provide a name to name your item.");
+						return false;
+					}
+
+					StringBuffer name = new StringBuffer();
+					for (int i = 0; i < args.length; i++) {
+						name.append(args[i]);
+						if (i != args.length - 1)
+							name.append(" ");
+					}
+
+					Player player = (Player) sender;
+					player.getInventory().getItemInMainHand()
+							.getItemMeta().setDisplayName(name.toString().replace("&", ChatColor.COLOR_CHAR + ""));
+					return true;
 	    	case "funreload":
 	    		DynamicCommands.UnRegisterCommands();
 	    		onEnable();
